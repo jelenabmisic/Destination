@@ -6,7 +6,6 @@ jobs:
     name: git clone
     runs-on:
       - self-hosted
-      - agent
     steps:
     - name: checkout
       uses: actions/checkout@v4.1.0

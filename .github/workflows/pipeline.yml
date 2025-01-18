@@ -1,0 +1,27 @@
+name: folder1/folder_b/pipeline
+on:
+  workflow_dispatch:
+jobs:
+  git_clone:
+    name: git clone
+    runs-on:
+      - self-hosted
+      - agent
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+      with:
+        repository: jelenabmisic/TeamForge
+  listaj:
+    runs-on:
+      - self-hosted
+      - agent
+    needs: git_clone
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: sh
+      shell: bash
+      run: ls

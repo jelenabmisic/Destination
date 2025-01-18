@@ -15,8 +15,7 @@ jobs:
         repository: jelenabmisic/TeamForge
   listaj:
     runs-on:
-      - self-hosted
-      - agent
+      - ubuntu-latest
     needs: git_clone
     steps:
     - name: checkout

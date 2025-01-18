@@ -5,7 +5,7 @@ jobs:
   git_clone:
     name: git clone
     runs-on:
-      - self-hosted
+      - ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v4.1.0

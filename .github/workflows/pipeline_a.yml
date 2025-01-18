@@ -1,0 +1,34 @@
+name: folder1/folder_a/pipeline_a
+on:
+  workflow_dispatch:
+jobs:
+  git_clone:
+    name: git clone
+    runs-on:
+      - self-hosted
+      - agent
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+      with:
+        repository: jelenabmisic/TeamForge
+  listaj:
+    runs-on: windows-latest
+    needs: git_clone
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: bat
+      shell: cmd
+      run: dir * /s
+  izvrsi:
+    runs-on: windows-latest
+    needs: listaj
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: bat
+      shell: cmd
+      run: izv1.cmd
